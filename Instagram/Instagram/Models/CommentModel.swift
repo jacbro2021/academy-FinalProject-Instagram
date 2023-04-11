@@ -11,4 +11,5 @@ struct Comment: Identifiable {
     let id = UUID()
     let owner: Profile
     let comment: String
+    let likes: Int
 }

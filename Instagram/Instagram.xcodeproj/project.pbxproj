@@ -14,6 +14,11 @@
 		48F23CE429E46B3500A011E3 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F23CE329E46B3500A011E3 /* ProfileModel.swift */; };
 		48F23CE629E46B4000A011E3 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F23CE529E46B4000A011E3 /* PostModel.swift */; };
 		48F23CE829E46E0100A011E3 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F23CE729E46E0100A011E3 /* CommentModel.swift */; };
+		48F23CEA29E47B3B00A011E3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F23CE929E47B3B00A011E3 /* ProfileViewModel.swift */; };
+		48F23CEC29E5048500A011E3 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F23CEB29E5048500A011E3 /* ContentViewModel.swift */; };
+		48F23CEE29E5049600A011E3 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F23CED29E5049600A011E3 /* PostViewModel.swift */; };
+		48F23CF029E504A800A011E3 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F23CEF29E504A800A011E3 /* PostView.swift */; };
+		48F23CF229E504B500A011E3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F23CF129E504B500A011E3 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +30,11 @@
 		48F23CE329E46B3500A011E3 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		48F23CE529E46B4000A011E3 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		48F23CE729E46E0100A011E3 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		48F23CE929E47B3B00A011E3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		48F23CEB29E5048500A011E3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		48F23CED29E5049600A011E3 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		48F23CEF29E504A800A011E3 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		48F23CF129E504B500A011E3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				48F23CD429E469BA00A011E3 /* ContentView.swift */,
+				48F23CEF29E504A800A011E3 /* PostView.swift */,
+				48F23CF129E504B500A011E3 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -86,6 +98,9 @@
 		48F23CE129E46AC800A011E3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				48F23CE929E47B3B00A011E3 /* ProfileViewModel.swift */,
+				48F23CEB29E5048500A011E3 /* ContentViewModel.swift */,
+				48F23CED29E5049600A011E3 /* PostViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -170,10 +185,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F23CEE29E5049600A011E3 /* PostViewModel.swift in Sources */,
+				48F23CEA29E47B3B00A011E3 /* ProfileViewModel.swift in Sources */,
+				48F23CF229E504B500A011E3 /* ProfileView.swift in Sources */,
 				48F23CE429E46B3500A011E3 /* ProfileModel.swift in Sources */,
 				48F23CE629E46B4000A011E3 /* PostModel.swift in Sources */,
+				48F23CEC29E5048500A011E3 /* ContentViewModel.swift in Sources */,
 				48F23CE829E46E0100A011E3 /* CommentModel.swift in Sources */,
 				48F23CD529E469BA00A011E3 /* ContentView.swift in Sources */,
+				48F23CF029E504A800A011E3 /* PostView.swift in Sources */,
 				48F23CD329E469BA00A011E3 /* InstagramApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

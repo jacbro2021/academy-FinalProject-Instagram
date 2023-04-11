@@ -9,7 +9,10 @@ import Foundation
 
 struct Profile: Identifiable {
     let id = UUID()
-    let posts: [Post]
-    let followers: [Profile]
-    let following: [Profile]
+    var handle: String
+    var posts: [Post]
+    var profilePicture: String
+    var bio: String
+    var followers: [Profile]
+    var following: [Profile]
 }

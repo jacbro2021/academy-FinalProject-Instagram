@@ -6,12 +6,12 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct Post: Identifiable {
     let id = UUID()
     let owner: Profile
-    let image: Image
+    let image: String
     let likes: Int
     let comments: [Comment]
+    let caption: String
 }
