@@ -9,9 +9,10 @@ import Foundation
 
 struct Post: Identifiable {
     let id = UUID()
-    let owner: Profile
     let image: String
-    let likes: Int
-    let comments: [Comment]
+    var likes: Int
+    var comments: [Comment]
     let caption: String
+    let hoursSincePost: Int
+    let owner: String
 }

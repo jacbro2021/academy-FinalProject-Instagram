@@ -9,7 +9,10 @@ import SwiftUI
 
 struct PostView: View {
     
-    @StateObject var vm = PostViewModel()
+    @StateObject var vm: PostViewModel
+    @State var likedPost = false
+    @State var bookmarked = false
+    @State var commentSheet = false
     
     var body: some View {
         VStack {
@@ -17,17 +20,15 @@ struct PostView: View {
                 Button {
                     //add functionality linking to profile view here
                 } label: {
-                    HStack {
-                        Image(vm.post.owner.profilePicture)
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(Circle())
-                            .frame(width: 50, height: 50)
-                        Text(vm.post.owner.handle)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.primary)
-                    }
-            }
+                    Image(vm.owner.profilePicture)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .frame(width: 50, height: 50)
+                    Text(vm.owner.handle)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                }
                 Spacer()
                 Image(systemName: "ellipsis")
                     .padding(.trailing)
@@ -39,38 +40,54 @@ struct PostView: View {
             
             HStack {
                 Button {
-                    //like functionality goes here
+                    if likedPost {
+                        vm.decrementLikeCount()
+                        likedPost.toggle()
+                    } else {
+                        vm.incrementLikeCount()
+                        likedPost.toggle()
+                    }
                 } label: {
-                    Image(systemName: "heart")
-                        .font(.title3)
-                        .fontWeight(.medium)
-                        .foregroundColor(.primary)
-                    
+                    if likedPost {
+                        Image(systemName: "heart.fill")
+                            .font(.title2)
+                            .fontWeight(.medium)
+                            .foregroundColor(.red)
+                    } else {
+                        Image(systemName: "heart")
+                            .font(.title2)
+                            .fontWeight(.medium)
+                            .foregroundColor(.primary)
+                    }
                 }
+                
                 Button {
-                    //message functionality goes here
+                    commentSheet.toggle()
                 } label: {
                     Image(systemName: "message")
-                        .font(.title3)
+                        .font(.title2)
                         .fontWeight(.medium)
                         .foregroundColor(.primary)
+                }.sheet(isPresented: $commentSheet) {
+                    AddCommentView(vm: vm)
                 }
-                Button {
-                    //Dm functionality goes here???
-                } label: {
+                
+                Button {} label: {
                     Image(systemName: "paperplane")
-                        .font(.title3)
+                        .font(.title2)
                         .fontWeight(.medium)
                         .foregroundColor(.primary)
+                }.sheet(isPresented: $commentSheet) {
+                    AddCommentView(vm: vm)
                 }
                 
                 Spacer()
                 
                 Button {
-                    //bookmark functionality goes here
+                    bookmarked.toggle()
                 } label: {
-                    Image(systemName: "bookmark")
-                        .font(.title3)
+                    Image(systemName: bookmarked ? "bookmark.fill" : "bookmark")
+                        .font(.title2)
                         .fontWeight(.medium)
                         .foregroundColor(.primary)
                 }
@@ -81,40 +98,35 @@ struct PostView: View {
                     .padding(5)
                 Spacer()
             }
+            
             HStack() {
-                Text("**\(vm.post.owner.handle)** \(vm.post.caption)")
+                Text("**\(vm.owner.handle)** \(vm.post.caption)")
                 Spacer()
             }.padding(.leading, 5)
                 .padding(.bottom, 10)
             
-            ForEach (vm.post.comments) { comment in
-                HStack {
-                    Text("**\(comment.owner.handle)** \(comment.comment)")
-                        .padding(.leading, 5)
-                    Spacer()
+            HStack {
+                if vm.post.comments.count > 0 {
                     Button {
-                        //add comment like functionality here
+                        commentSheet.toggle()
                     } label: {
-                        HStack {
-                            Text("\(comment.likes)")
-                                .foregroundColor(.primary)
-                            Image(systemName: "heart")
-                                .font(.title3)
-                                .fontWeight(.medium)
-                                .foregroundColor(.primary)
-                                .padding(.trailing, 5)
-                        }
+                        Text(vm.post.comments.count > 1 ? "\(vm.post.comments.count) Comments" : "\(vm.post.comments.count) Comment")
+                            .padding(.leading, 5)
+                            .foregroundColor(.primary)
+                            .opacity(0.5)
+                    }.sheet(isPresented: $commentSheet) {
+                        AddCommentView(vm: vm)
                     }
                 }
+                
+                Spacer()
             }
-            
-            
         }
     }
 }
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView()
+        PostView(vm: PostViewModel(post: ProfileData().user.posts[0], owner: ProfileData().user))
     }
 }

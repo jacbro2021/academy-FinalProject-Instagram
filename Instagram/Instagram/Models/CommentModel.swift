@@ -9,7 +9,8 @@ import Foundation
 
 struct Comment: Identifiable {
     let id = UUID()
-    let owner: Profile
+    let owner: String
     let comment: String
-    let likes: Int
+    var likes: Int
+    var liked: Bool
 }
