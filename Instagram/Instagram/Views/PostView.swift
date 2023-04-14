@@ -18,7 +18,8 @@ struct PostView: View {
         VStack {
             HStack {
                 NavigationLink {
-                    ProfileView(vm: ProfileViewModel(vm.owner))
+                    ProfileView(vm: ProfileViewModel(profile: vm.owner,
+                                                     profileData: vm.profileData))
                 } label: {
                     Image(vm.owner.profilePicture)
                         .resizable()
@@ -139,6 +140,8 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(vm: PostViewModel(post: ProfileData().user.posts[0], owner: ProfileData().user))
+        PostView(vm: PostViewModel(post: ProfileData().user.posts[0],
+                                   owner: ProfileData().user,
+                                   profileData: ProfileData()))
     }
 }

@@ -8,8 +8,15 @@
 import Foundation
 
 class FeedViewModel: ObservableObject {
-    @Published var profiles = ProfileData().profiles
-    @Published var user = ProfileData().user
+    @Published var profiles: [Profile]
+    @Published var user: Profile
+    @Published var profileData: ProfileData
+    
+    init(profiles: [Profile], user: Profile, profileData: ProfileData) {
+        self.profiles = profiles
+        self.user = user
+        self.profileData = profileData
+    }
     
     //sorts posts for display in the feed
     //

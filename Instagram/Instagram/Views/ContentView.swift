@@ -9,9 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @StateObject var vm = ContentViewModel()
+    
     var body: some View {
         TabView {
-            FeedView()
+            FeedView(vm: FeedViewModel(profiles: vm.profileData.profiles,
+                                       user: vm.profileData.user,
+                                       profileData: vm.profileData))
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
@@ -26,7 +30,8 @@ struct ContentView: View {
                     Label("Post", systemImage: "plus.app")
                 }
             
-            ProfileView(vm: ProfileViewModel())
+            ProfileView(vm: ProfileViewModel(profile: vm.profileData.user,
+                                             profileData: vm.profileData))
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }

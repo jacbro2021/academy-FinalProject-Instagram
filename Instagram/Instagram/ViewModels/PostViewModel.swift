@@ -11,11 +11,13 @@ import SwiftUI
 class PostViewModel: ObservableObject {
     @Published var post: Post
     @Published var owner: Profile
+    @Published var profileData: ProfileData
     
     //init class
-    init(post: Post, owner: Profile) {
+    init(post: Post, owner: Profile, profileData: ProfileData) {
         self.post = post
         self.owner = owner
+        self.profileData = profileData
     }
     
     //increments the like count for the post

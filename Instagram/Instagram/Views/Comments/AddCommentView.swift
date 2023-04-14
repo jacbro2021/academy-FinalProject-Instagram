@@ -37,6 +37,8 @@ struct AddCommentView: View {
 
 struct AddCommentView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCommentView(vm: PostViewModel(post: ProfileData().user.posts[0], owner: ProfileData().user))
+        AddCommentView(vm: PostViewModel(post: ProfileData().user.posts[0],
+                                         owner: ProfileData().user,
+                                         profileData: ProfileData()))
     }
 }

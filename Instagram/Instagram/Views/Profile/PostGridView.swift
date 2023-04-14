@@ -23,7 +23,9 @@ struct PostGridView: View {
                 LazyVGrid(columns: columns, spacing: 0) {
                     ForEach (vm.profile.posts) { post in
                         NavigationLink {
-                            PostView(vm: PostViewModel(post: post, owner: vm.profile))
+                            PostView(vm: PostViewModel(post: post,
+                                                       owner: vm.profile,
+                                                       profileData: vm.profileData))
                         } label: {
                             Image(post.image)
                                 .resizable()
@@ -40,6 +42,7 @@ struct PostGridView: View {
 
 struct PostGridView_Previews: PreviewProvider {
     static var previews: some View {
-        PostGridView(vm: ProfileViewModel())
+        PostGridView(vm: ProfileViewModel(profile: ProfileData().user,
+                                          profileData: ProfileData()))
     }
 }

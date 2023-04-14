@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeedView: View {
     
-    @StateObject var vm = FeedViewModel()
+    @StateObject var vm: FeedViewModel
     
     var body: some View {
         NavigationView {
@@ -43,7 +43,9 @@ struct FeedView: View {
                 }
                 
                 ForEach(vm.sortedPosts(profiles: vm.profiles)) { post in
-                    PostView(vm: PostViewModel(post: post, owner: vm.matchProfileToPost(post: post)))
+                    PostView(vm: PostViewModel(post: post,
+                                               owner: vm.matchProfileToPost(post: post),
+                                               profileData: vm.profileData))
                 }
             }.toolbar {
                 HStack {
@@ -88,6 +90,8 @@ struct FeedView: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView()
+        FeedView(vm: FeedViewModel(profiles: ProfileData().profiles,
+                                   user: ProfileData().user,
+                                   profileData: ProfileData()))
     }
 }

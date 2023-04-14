@@ -15,7 +15,9 @@ struct PostListView: View {
         ScrollView(.vertical) {
             VStack {
                 ForEach(vm.profile.posts) { post in
-                    PostView(vm: PostViewModel(post: post, owner: vm.profile))
+                    PostView(vm: PostViewModel(post: post,
+                                               owner: vm.profile,
+                                               profileData: vm.profileData))
                 }
             }
         }
@@ -24,6 +26,7 @@ struct PostListView: View {
 
 struct PostListView_Previews: PreviewProvider {
     static var previews: some View {
-        PostListView(vm: ProfileViewModel())
+        PostListView(vm: ProfileViewModel(profile: ProfileData().user,
+                                          profileData: ProfileData()))
     }
 }
