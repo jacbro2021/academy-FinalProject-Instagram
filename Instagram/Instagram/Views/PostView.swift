@@ -17,8 +17,8 @@ struct PostView: View {
     var body: some View {
         VStack {
             HStack {
-                Button {
-                    //add functionality linking to profile view here
+                NavigationLink {
+                    ProfileView(vm: ProfileViewModel(vm.owner))
                 } label: {
                     Image(vm.owner.profilePicture)
                         .resizable()
