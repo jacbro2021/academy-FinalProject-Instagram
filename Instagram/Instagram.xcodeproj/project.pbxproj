@@ -79,6 +79,25 @@
 			path = "Logo Font";
 			sourceTree = "<group>";
 		};
+		4827AF4629E9822300CD8311 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				48F23CF929E6147100A011E3 /* AddCommentView.swift */,
+				48F23CF329E60E8600A011E3 /* CommentView.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		4827AF4729E9823C00CD8311 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				48F23CF129E504B500A011E3 /* ProfileView.swift */,
+				4827AF4229E908D900CD8311 /* PostGridView.swift */,
+				4827AF4429E908E300CD8311 /* PostListView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		48F23CC629E469B900A011E3 = {
 			isa = PBXGroup;
 			children = (
@@ -124,14 +143,11 @@
 			children = (
 				48F23CD429E469BA00A011E3 /* ContentView.swift */,
 				4827AF3C29E8ABAD00CD8311 /* FeedView.swift */,
-				48F23CF129E504B500A011E3 /* ProfileView.swift */,
 				4827AF3E29E8BD2700CD8311 /* SearchView.swift */,
 				4827AF4029E8BD6F00CD8311 /* AddPostView.swift */,
 				48F23CEF29E504A800A011E3 /* PostView.swift */,
-				4827AF4229E908D900CD8311 /* PostGridView.swift */,
-				4827AF4429E908E300CD8311 /* PostListView.swift */,
-				48F23CF329E60E8600A011E3 /* CommentView.swift */,
-				48F23CF929E6147100A011E3 /* AddCommentView.swift */,
+				4827AF4729E9823C00CD8311 /* Profile */,
+				4827AF4629E9822300CD8311 /* Comments */,
 			);
 			path = Views;
 			sourceTree = "<group>";

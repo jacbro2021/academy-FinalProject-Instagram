@@ -132,6 +132,7 @@ struct PostView: View {
                     .font(.caption2)
                 Spacer()
             }
+            Spacer()
         }
     }
 }

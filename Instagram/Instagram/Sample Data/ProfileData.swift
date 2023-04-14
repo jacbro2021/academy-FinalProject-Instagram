@@ -15,7 +15,7 @@ class ProfileData {
         
         //init user profile
         var user0 = Profile(name: "Jacob Brown", handle: "j.b.22",
-                            posts: [PostData.post1, PostData.post2],
+                            posts: [PostData.post1, PostData.post2, PostData.post9, PostData.post10],
                             profilePicture: "profile_picture",
                             bio: "student @ UNC Chapel Hill",
                             followers: [],

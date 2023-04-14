@@ -23,4 +23,8 @@ class PostData {
     static var post7 = Post(image: "street", likes: 41, comments: [], caption: "I run these streets... literally. I run marathons.", hoursSincePost: 128, owner: "the_seargent")
     
     static var post8 = Post(image: "vacation", likes: 18, comments: [], caption: "So excited to go on vacation!", hoursSincePost: 256, owner: "obama_44")
+    
+    static var post9 = Post(image: "jeep", likes: 223, comments: [], caption: "Beach driving😎", hoursSincePost: 12, owner: "j.b.22")
+    
+    static var post10 = Post(image: "jeep", likes: 223, comments: [], caption: "Beach driving😎", hoursSincePost: 12, owner: "j.b.22")
 }
