@@ -63,7 +63,7 @@ struct SwiftUIView: View {
                                         } label: {
                                             Image(profile.profilePicture)
                                                 .resizable()
-                                                .scaledToFit()
+                                                .scaledToFill()
                                                 .frame(width: 60, height: 60)        
                                                 .cornerRadius(50)
                                         }

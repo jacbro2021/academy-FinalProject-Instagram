@@ -104,7 +104,7 @@ struct PostView: View {
                 Text("**\(vm.owner.handle)** \(vm.post.caption)")
                 Spacer()
             }   .padding(.leading, 10)
-                .padding(.bottom, 2)
+                
                
             
             HStack {
@@ -113,7 +113,7 @@ struct PostView: View {
                         commentSheet.toggle()
                     } label: {
                         Text(vm.post.comments.count > 1 ? "\(vm.post.comments.count) Comments" : "\(vm.post.comments.count) Comment")
-                            .padding(.vertical, 5)
+                            .padding(.vertical, 1)
                             .padding(.horizontal, 10)
                             .foregroundColor(.primary)
                             .opacity(0.5)

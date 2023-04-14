@@ -14,7 +14,7 @@ class ProfileData {
     init() {
         
         //init user profile
-        var user0 = Profile(handle: "j.b.22",
+        var user0 = Profile(name: "Jacob Brown", handle: "j.b.22",
                             posts: [PostData.post1, PostData.post2],
                             profilePicture: "profile_picture",
                             bio: "student @ UNC Chapel Hill",
@@ -22,42 +22,42 @@ class ProfileData {
                             following: [])
         
         //init sample users
-        var user1 = Profile(handle: "sal_lly22",
+        var user1 = Profile(name: "Sal Lilbertson", handle: "sal_lly22",
                             posts: [PostData.post3],
                             profilePicture: "child",
                             bio: "I love ice cream",
                             followers: [],
                             following: [])
         
-        var user2 = Profile(handle: "julia37",
+        var user2 = Profile(name: "Julia McLoser", handle: "julia37",
                             posts: [PostData.post4],
                             profilePicture: "girl1",
                             bio: "I love to read",
                             followers: [],
                             following: [])
         
-        var user3 = Profile(handle: "surfing_man",
+        var user3 = Profile(name: "Jimmy John", handle: "surfing_man",
                             posts: [PostData.post5],
                             profilePicture: "guy1",
                             bio: "yellow is my favorite color",
                             followers: [],
                             following: [])
         
-        var user4 = Profile(handle: "city_boys_up27",
+        var user4 = Profile(name: "Chuck Clodfelter", handle: "city_boys_up27",
                             posts: [PostData.post6],
                             profilePicture: "guy2",
                             bio: "Coolest dude in NYC",
                             followers: [],
                             following: [])
         
-        var user5 = Profile(handle: "the_seargent",
+        var user5 = Profile(name: "Ricky Bobby", handle: "the_seargent",
                             posts: [PostData.post7],
                             profilePicture: "guy3",
                             bio: "I enjoy yelling at people",
                             followers: [],
                             following: [])
         
-        var user6 = Profile(handle: "obama_44",
+        var user6 = Profile(name: "Barrack Obama", handle: "obama_44",
                             posts: [PostData.post8],
                             profilePicture: "obama",
                             bio: "former POTUS. I also have a great jumpshot",

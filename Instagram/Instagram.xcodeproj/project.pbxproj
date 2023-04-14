@@ -11,6 +11,8 @@
 		4827AF3D29E8ABAD00CD8311 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827AF3C29E8ABAD00CD8311 /* FeedView.swift */; };
 		4827AF3F29E8BD2700CD8311 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827AF3E29E8BD2700CD8311 /* SearchView.swift */; };
 		4827AF4129E8BD6F00CD8311 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827AF4029E8BD6F00CD8311 /* AddPostView.swift */; };
+		4827AF4329E908D900CD8311 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827AF4229E908D900CD8311 /* PostGridView.swift */; };
+		4827AF4529E908E300CD8311 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827AF4429E908E300CD8311 /* PostListView.swift */; };
 		48F23CD329E469BA00A011E3 /* InstagramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F23CD229E469BA00A011E3 /* InstagramApp.swift */; };
 		48F23CD529E469BA00A011E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F23CD429E469BA00A011E3 /* ContentView.swift */; };
 		48F23CD729E469BA00A011E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F23CD629E469BA00A011E3 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		4827AF3C29E8ABAD00CD8311 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		4827AF3E29E8BD2700CD8311 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		4827AF4029E8BD6F00CD8311 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
+		4827AF4229E908D900CD8311 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
+		4827AF4429E908E300CD8311 /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		48F23CCF29E469BA00A011E3 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F23CD229E469BA00A011E3 /* InstagramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramApp.swift; sourceTree = "<group>"; };
 		48F23CD429E469BA00A011E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,13 +123,15 @@
 			isa = PBXGroup;
 			children = (
 				48F23CD429E469BA00A011E3 /* ContentView.swift */,
-				48F23CEF29E504A800A011E3 /* PostView.swift */,
-				48F23CF129E504B500A011E3 /* ProfileView.swift */,
-				48F23CF329E60E8600A011E3 /* CommentView.swift */,
-				48F23CF929E6147100A011E3 /* AddCommentView.swift */,
 				4827AF3C29E8ABAD00CD8311 /* FeedView.swift */,
+				48F23CF129E504B500A011E3 /* ProfileView.swift */,
 				4827AF3E29E8BD2700CD8311 /* SearchView.swift */,
 				4827AF4029E8BD6F00CD8311 /* AddPostView.swift */,
+				48F23CEF29E504A800A011E3 /* PostView.swift */,
+				4827AF4229E908D900CD8311 /* PostGridView.swift */,
+				4827AF4429E908E300CD8311 /* PostListView.swift */,
+				48F23CF329E60E8600A011E3 /* CommentView.swift */,
+				48F23CF929E6147100A011E3 /* AddCommentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,7 +249,9 @@
 				48F23CE629E46B4000A011E3 /* PostModel.swift in Sources */,
 				4827AF4129E8BD6F00CD8311 /* AddPostView.swift in Sources */,
 				48F23D1929E84EF500A011E3 /* ProfileData.swift in Sources */,
+				4827AF4329E908D900CD8311 /* PostGridView.swift in Sources */,
 				48F23CEC29E5048500A011E3 /* FeedViewModel.swift in Sources */,
+				4827AF4529E908E300CD8311 /* PostListView.swift in Sources */,
 				48F23CE829E46E0100A011E3 /* CommentModel.swift in Sources */,
 				48F23CD529E469BA00A011E3 /* ContentView.swift in Sources */,
 				48F23CF029E504A800A011E3 /* PostView.swift in Sources */,

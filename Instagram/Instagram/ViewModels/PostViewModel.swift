@@ -53,6 +53,10 @@ class PostViewModel: ObservableObject {
         return hours % 24 > 0
     }
     
+    //returns the necessary time stamp for a given post
+    //
+    //params: time in hours since the post was made
+    //output: time string with the correct formatting
     func timeString(_ hours: Int) -> String {
         if hours == 0 {
             return "just now"

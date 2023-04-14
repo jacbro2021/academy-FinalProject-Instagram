@@ -26,12 +26,11 @@ struct ContentView: View {
                     Label("Post", systemImage: "plus.app")
                 }
             
-            ProfileView()
+            ProfileView(vm: ProfileViewModel())
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
         }
-
     }
 }
 
