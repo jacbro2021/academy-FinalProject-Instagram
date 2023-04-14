@@ -91,19 +91,21 @@ struct PostView: View {
                         .fontWeight(.medium)
                         .foregroundColor(.primary)
                 }
-            }   .padding(.horizontal, 5)
+            }   .padding(.horizontal, 10)
             
             HStack {
                 Text("**\(vm.post.likes)** likes")
-                    .padding(5)
+                    .padding(.vertical, 5)
+                    .padding(.horizontal, 10)
                 Spacer()
             }
             
             HStack() {
                 Text("**\(vm.owner.handle)** \(vm.post.caption)")
                 Spacer()
-            }.padding(.leading, 5)
-                .padding(.bottom, 10)
+            }   .padding(.leading, 10)
+                .padding(.bottom, 2)
+               
             
             HStack {
                 if vm.post.comments.count > 0 {
@@ -111,7 +113,8 @@ struct PostView: View {
                         commentSheet.toggle()
                     } label: {
                         Text(vm.post.comments.count > 1 ? "\(vm.post.comments.count) Comments" : "\(vm.post.comments.count) Comment")
-                            .padding(.leading, 5)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal, 10)
                             .foregroundColor(.primary)
                             .opacity(0.5)
                     }.sheet(isPresented: $commentSheet) {
@@ -119,6 +122,14 @@ struct PostView: View {
                     }
                 }
                 
+                Spacer()
+            }
+            HStack {
+                Text(vm.timeString(vm.post.hoursSincePost))
+                    .padding(.leading, 10)
+                    .foregroundColor(.primary)
+                    .opacity(0.50)
+                    .font(.caption2)
                 Spacer()
             }
         }

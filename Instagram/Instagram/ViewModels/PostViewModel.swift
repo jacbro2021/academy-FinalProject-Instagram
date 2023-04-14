@@ -44,4 +44,23 @@ class PostViewModel: ObservableObject {
                                      likes: 0,
                                      liked: false))
     }
+    
+    //returns a boolean indicating if the view should show the time since post in hours or days (true for days, false for hours)
+    //
+    //params: int representing the hours since the post was uploaded
+    //output: boolean indicating if the time should be represented in hours or days
+    func showHoursOrDays(_ hours: Int) -> Bool {
+        return hours % 24 > 0
+    }
+    
+    func timeString(_ hours: Int) -> String {
+        if hours == 0 {
+            return "just now"
+        } else if showHoursOrDays(hours) {
+            let days = hours % 24
+            return "\(days) days ago"
+        } else {
+            return "\(hours) hours ago"
+        }
+    }
 }
