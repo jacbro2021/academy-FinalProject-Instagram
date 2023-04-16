@@ -40,4 +40,12 @@ struct Profile: Identifiable {
            return false
         }
     }
+    
+    //returns the lowercased version of the profiles handle
+    //
+    //params: none
+    //output: the lowercased handle of the profile
+    func getLowercaseHandle() -> String {
+        return handle.lowercased()
+    }
 }

@@ -132,7 +132,6 @@ struct ProfileView: View {
                         } else {
                             PostListView(vm: vm)
                         }
-                        
                     }
                 }
             }

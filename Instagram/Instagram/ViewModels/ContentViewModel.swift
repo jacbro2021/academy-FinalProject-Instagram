@@ -10,6 +10,7 @@ import Foundation
 class ContentViewModel: ObservableObject {
     @Published var profileData: ProfileData
     
+    //init
     init() {
         self.profileData = ProfileData()
     }

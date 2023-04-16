@@ -20,7 +20,8 @@ struct ContentView: View {
                     Label("Home", systemImage: "house")
                 }
             
-            SearchView()
+            SearchView(vm: SearchViewModel(profiles: vm.profileData.profiles,
+                                           profileData: vm.profileData))
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }

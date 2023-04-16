@@ -127,7 +127,7 @@ struct PostView: View {
             }
             HStack {
                 Text(vm.timeString(vm.post.hoursSincePost))
-                    .padding(.leading, 10)
+                    .padding(.leading, 12)
                     .foregroundColor(.primary)
                     .opacity(0.50)
                     .font(.caption2)

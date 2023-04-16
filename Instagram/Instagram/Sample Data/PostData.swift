@@ -8,7 +8,7 @@
 import Foundation
 
 class PostData {
-    static var post1 = Post(image: "sausalito", likes: 298, comments: [Comment(owner: "user1", comment: "dope", likes: 1, liked: true)], caption: "Sausalito, CA", hoursSincePost: 2, owner: "j.b.22")
+    static var post1 = Post(image: "sausalito", likes: 298, comments: [Comment(owner: "the_seargent", comment: "Cool Picture!", likes: 1, liked: true)], caption: "Sausalito, CA", hoursSincePost: 2, owner: "j.b.22")
     
     static var post2 = Post(image: "jeep", likes: 223, comments: [], caption: "Beach driving😎", hoursSincePost: 12, owner: "j.b.22")
     
