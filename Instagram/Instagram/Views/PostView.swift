@@ -23,9 +23,10 @@ struct PostView: View {
                 } label: {
                     Image(vm.owner.profilePicture)
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                         .clipShape(Circle())
                         .frame(width: 50, height: 50)
+                        .padding(.leading, 10)
                     Text(vm.owner.handle)
                         .fontWeight(.semibold)
                         .foregroundColor(.primary)
