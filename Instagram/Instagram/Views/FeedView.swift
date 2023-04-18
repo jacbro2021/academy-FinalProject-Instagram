@@ -37,7 +37,8 @@ struct FeedView: View {
                                 }
                                 Text("\(profile.handle)")
                                     .font(.caption)
-                            }.padding(5)
+                            }   .frame(width:60, height: 85)
+                                .padding(5)
                         }
                     }
                 }
@@ -49,9 +50,16 @@ struct FeedView: View {
                 }
             }.toolbar {
                 HStack {
-                    Text("Instagram")
-                        .font(.custom("Billabong", size: 35))
-                        .padding(.trailing, 90)
+                    VStack {
+                        
+                        Image("instagram")
+                            .resizable()
+                            .frame(width: 125, height: 100)
+                            .scaledToFit()
+                            .padding(.trailing, 70)
+                        Spacer()
+                        Spacer()
+                    }
                     
                     Spacer()
                     

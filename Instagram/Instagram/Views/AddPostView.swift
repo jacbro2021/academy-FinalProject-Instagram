@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddPostView: View {
     
+    @StateObject var vm: AddPostViewModel
     @State var caption = ""
     @State var changePostImage = false
     @State var openCameraRoll = false
@@ -24,7 +25,8 @@ struct AddPostView: View {
                     .padding(.leading, 50)
                 Spacer()
                 Button {
-                    //add post functionality here
+                    vm.post(image: imageSelected, caption: caption)
+                    caption = ""
                 } label: {
                     Text("Post")
                         .padding(.trailing)
@@ -66,6 +68,7 @@ struct AddPostView: View {
 
 struct AddPostView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPostView()
+        @State var fake = false
+        AddPostView(vm: AddPostViewModel(ProfileData()))
     }
 }

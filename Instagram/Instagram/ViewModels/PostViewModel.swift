@@ -12,12 +12,14 @@ class PostViewModel: ObservableObject {
     @Published var post: Post
     @Published var owner: Profile
     @Published var profileData: ProfileData
+    @Published var likedPost: Bool
     
     //init class
     init(post: Post, owner: Profile, profileData: ProfileData) {
         self.post = post
         self.owner = owner
         self.profileData = profileData
+        self.likedPost = post.userLikedPost
     }
     
     //increments the like count for the post
@@ -26,6 +28,7 @@ class PostViewModel: ObservableObject {
     //output: none; changes post like count
     func incrementLikeCount() {
         post.likes += 1
+        post.userLikedPost = true
     }
     
     //decrement the like count for the post
@@ -34,6 +37,7 @@ class PostViewModel: ObservableObject {
     //output: none; changes post like count
     func decrementLikeCount() {
         post.likes -= 1
+        post.userLikedPost = false
     }
     
     //appends comment to comment array of post

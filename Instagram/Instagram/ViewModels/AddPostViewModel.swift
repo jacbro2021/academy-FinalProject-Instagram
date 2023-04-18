@@ -9,6 +9,25 @@ import Foundation
 import SwiftUI
 import UIKit
 
+class AddPostViewModel: ObservableObject {
+    
+    @Published var profileData: ProfileData
+    
+    init(_ profileData: ProfileData) {
+        self.profileData = profileData
+    }
+    
+    func post(image: UIImage, caption: String) {
+        var post = Post(image: Image(uiImage: image), likes: 0, comments: [], caption: caption, hoursSincePost: 0, owner: profileData.user.handle)
+        profileData.user.posts.append(post)
+    }
+}
+
+
+
+
+//struct that handles selecting an image from the camera roll
+//or using the camera
 struct ImagePicker: UIViewControllerRepresentable {
     
     @Binding var selectedImage: UIImage

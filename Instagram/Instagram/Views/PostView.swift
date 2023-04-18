@@ -10,9 +10,9 @@ import SwiftUI
 struct PostView: View {
     
     @StateObject var vm: PostViewModel
-    @State var likedPost = false
-    @State var bookmarked = false
-    @State var commentSheet = false
+    @State private var likedPost = false
+    @State private var bookmarked = false
+    @State private var commentSheet = false
     
     var body: some View {
         VStack {
@@ -36,7 +36,7 @@ struct PostView: View {
                     .padding(.trailing)
             }
             
-            Image(vm.post.image)
+            vm.post.image
                 .resizable()
                 .scaledToFit()
             

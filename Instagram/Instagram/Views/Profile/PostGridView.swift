@@ -27,7 +27,7 @@ struct PostGridView: View {
                                                        owner: vm.profile,
                                                        profileData: vm.profileData))
                         } label: {
-                            Image(post.image)
+                            post.image
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: ImageDimension, height: ImageDimension)

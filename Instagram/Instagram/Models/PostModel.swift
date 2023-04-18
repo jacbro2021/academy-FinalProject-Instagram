@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Post: Identifiable {
     let id = UUID()
-    let image: String
+    let image: Image
     var likes: Int
     var comments: [Comment]
     let caption: String
     let hoursSincePost: Int
     let owner: String
+    var userLikedPost = false
 }

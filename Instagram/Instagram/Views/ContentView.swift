@@ -26,7 +26,7 @@ struct ContentView: View {
                     Label("Search", systemImage: "magnifyingglass")
                 }
             
-            AddPostView()
+            AddPostView(vm: AddPostViewModel(vm.profileData))
                 .tabItem {
                     Label("Post", systemImage: "plus.app")
                 }
