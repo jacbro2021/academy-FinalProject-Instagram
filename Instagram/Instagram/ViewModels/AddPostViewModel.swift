@@ -12,14 +12,21 @@ import UIKit
 class AddPostViewModel: ObservableObject {
     
     @Published var profileData: ProfileData
+    @ObservedObject var sampleData: ProfileData
     
-    init(_ profileData: ProfileData) {
+    init(profileData: ProfileData, sampleData: ProfileData) {
         self.profileData = profileData
+        self.sampleData = sampleData
     }
     
     func post(image: UIImage, caption: String) {
-        var post = Post(image: Image(uiImage: image), likes: 0, comments: [], caption: caption, hoursSincePost: 0, owner: profileData.user.handle)
-        profileData.user.posts.append(post)
+        let post = Post(image: Image(uiImage: image),
+                        likes: 0, comments: [],
+                        caption: caption,
+                        hoursSincePost: 0,
+                        owner: profileData.user.handle)
+        sampleData.user.posts.append(post)
+        
     }
 }
 

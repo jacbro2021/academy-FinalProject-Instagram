@@ -7,9 +7,9 @@
 
 import Foundation
 
-class ProfileData {
-    var profiles: [Profile]
-    var user: Profile
+class ProfileData: ObservableObject {
+    @Published var profiles: [Profile]
+    @Published var user: Profile
     
     init() {
         

@@ -135,13 +135,13 @@ struct ProfileView: View {
                     }
                 }
             }
-        }
+        }.ignoresSafeArea()
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(vm: ProfileViewModel(profile: ProfileData().user,
+        ProfileView(vm: ProfileViewModel(profile: ProfileData().profiles[0],
                                          profileData: ProfileData()))
     }
 }

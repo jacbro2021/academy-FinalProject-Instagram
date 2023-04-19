@@ -11,7 +11,7 @@ class ContentViewModel: ObservableObject {
     @Published var profileData: ProfileData
     
     //init
-    init() {
-        self.profileData = ProfileData()
+    init(_ profileData: ProfileData = ProfileData()) {
+        self.profileData = profileData
     }
 }

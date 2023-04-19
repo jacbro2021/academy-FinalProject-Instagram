@@ -6,15 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 class FeedViewModel: ObservableObject {
-    @Published var profiles: [Profile]
-    @Published var user: Profile
-    @Published var profileData: ProfileData
+     
+    @ObservedObject var profileData: ProfileData
     
-    init(profiles: [Profile], user: Profile, profileData: ProfileData) {
-        self.profiles = profiles
-        self.user = user
+    init(profileData: ProfileData) {
         self.profileData = profileData
     }
     
@@ -29,7 +27,7 @@ class FeedViewModel: ObservableObject {
                 posts.append(post)
             }
         }
-        for post in user.posts {
+        for post in profileData.user.posts {
             posts.append(post)
         }
         
@@ -63,11 +61,11 @@ class FeedViewModel: ObservableObject {
     //params: a post
     //output: the profile that maps to that post
     func matchProfileToPost(post: Post) -> Profile {
-        for profile in profiles {
+        for profile in profileData.profiles {
             if profile.handle == post.owner {
                 return profile
             }
         }
-        return user
+        return profileData.user
     }
 }

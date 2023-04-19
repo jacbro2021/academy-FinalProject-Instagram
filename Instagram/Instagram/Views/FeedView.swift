@@ -14,10 +14,9 @@ struct FeedView: View {
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
-                
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(vm.profiles) { profile in
+                        ForEach(vm.profileData.profiles) { profile in
                             VStack {
                                 VStack {
                                     Button {
@@ -43,7 +42,7 @@ struct FeedView: View {
                     }
                 }
                 
-                ForEach(vm.sortedPosts(profiles: vm.profiles)) { post in
+                ForEach(vm.sortedPosts(profiles: vm.profileData.profiles)) { post in
                     PostView(vm: PostViewModel(post: post,
                                                owner: vm.matchProfileToPost(post: post),
                                                profileData: vm.profileData))
@@ -57,6 +56,7 @@ struct FeedView: View {
                             .frame(width: 125, height: 100)
                             .scaledToFit()
                             .padding(.trailing, 70)
+                            .foregroundColor(.primary)
                         Spacer()
                         Spacer()
                     }
@@ -98,8 +98,6 @@ struct FeedView: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView(vm: FeedViewModel(profiles: ProfileData().profiles,
-                                   user: ProfileData().user,
-                                   profileData: ProfileData()))
+        FeedView(vm: FeedViewModel(profileData: ProfileData()))
     }
 }
