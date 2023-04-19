@@ -51,10 +51,9 @@ struct FeedView: View {
                 HStack {
                     VStack {
                         
-                        Image("instagram")
-                            .resizable()
-                            .frame(width: 125, height: 100)
-                            .scaledToFit()
+                        Text("Instagram")
+                            .font(.custom("Billabong", size: 45))
+                            .frame(width: 140, height: 100)
                             .padding(.trailing, 70)
                             .foregroundColor(.primary)
                         Spacer()

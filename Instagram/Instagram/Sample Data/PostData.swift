@@ -25,7 +25,7 @@ class PostData {
     
     static var post8 = Post(image: Image("vacation"), likes: 18, comments: [], caption: "So excited to go on vacation!", hoursSincePost: 256, owner: "obama_44")
     
-    static var post9 = Post(image: Image("jeep"), likes: 223, comments: [], caption: "Beach driving😎", hoursSincePost: 12, owner: "j.b.22")
+    static var post9 = Post(image: Image("landing"), likes: 223, comments: [], caption: "St.Helena, CA🍷", hoursSincePost: 12, owner: "j.b.22")
     
-    static var post10 = Post(image: Image("jeep"), likes: 223, comments: [], caption: "Beach driving😎", hoursSincePost: 12, owner: "j.b.22")
+    static var post10 = Post(image: Image("wall"), likes: 223, comments: [], caption: "Highway 1, CA", hoursSincePost: 12, owner: "j.b.22")
 }

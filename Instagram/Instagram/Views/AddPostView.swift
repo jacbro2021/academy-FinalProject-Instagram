@@ -60,10 +60,66 @@ struct AddPostView: View {
                     }
                     
                     TextField("Write a caption...", text: $caption, axis: .vertical)
-                        .frame(width: 250, height: 100, alignment: .topLeading)
+                        .frame(width: 250, height: 100, alignment: .center)
                         .padding()
                 }
+                
+                Group {
+                    Divider()
+                    
+                    Button {
+                        //add tagging functionality
+                    } label: {
+                        HStack {
+                            Text("Tag People")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }   .padding(.horizontal)
+                            .foregroundColor(.primary)
+                    }
+                    
+                    Divider()
+                    
+                    Button {
+                        //add tagging functionality
+                    } label: {
+                        HStack {
+                            Text("Add location")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }   .padding(.horizontal)
+                            .foregroundColor(.primary)
+                    }
+                    
+                    Divider()
+                    
+                    Button {
+                        //add tagging functionality
+                    } label: {
+                        HStack {
+                            Text("add Music")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }   .padding(.horizontal)
+                            .foregroundColor(.primary)
+                    }
+                    
+                    Divider()
+                    
+                    Button {
+                        //add tagging functionality
+                    } label: {
+                        HStack {
+                            Text("Add fundraiser")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }   .padding(.horizontal)
+                            .foregroundColor(.primary)
+                    }
+                }
+                
                 Spacer()
+                
             }.sheet(isPresented: $openCameraRoll) {
                 ImagePicker(selectedImage: $imageSelected,sourceType: .photoLibrary)
             }
