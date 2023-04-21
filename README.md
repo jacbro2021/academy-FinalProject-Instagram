@@ -8,7 +8,7 @@ https://user-images.githubusercontent.com/97564414/233738958-da97bf5a-b959-40e1-
 
 ### About
 
-This is my final project for App Team Carolina Acadmemy. This project utilizes various concepts that we have learned throughout the semester such as MVVM, various swiftUI property wrappers, and many other elements of swiftui. Alongside those elements, I gained experience using features such as accessing the devices camera roll using UIkit.
+This is my final project for App Team Carolina Academy. This project utilizes various concepts that we have learned throughout the semester such as MVVM, various swiftUI property wrappers, and many other elements of swiftui. Alongside those elements, I gained experience using features such as accessing the devices camera roll using UIkit.
 
 ### Dark Mode
 
