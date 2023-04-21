@@ -11,8 +11,20 @@ struct PostView: View {
     
     @StateObject var vm: PostViewModel
     @State private var likedPost = false
+    @State private var animate = false
+    @State private var likeAnimation = false
     @State private var bookmarked = false
     @State private var commentSheet = false
+    private let duration: Double = 0.2
+    private var animationScale: CGFloat{
+        likedPost ? 0.8 : 1.2
+    }
+    
+    func performAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500)) {
+            likeAnimation = false
+        }
+    }
     
     var body: some View {
         VStack {
@@ -36,18 +48,44 @@ struct PostView: View {
                     .padding(.trailing)
             }
             
-            vm.post.image
-                .resizable()
-                .scaledToFit()
+            ZStack {
+                vm.post.image
+                    .resizable()
+                    .scaledToFit()
+                    .onTapGesture(count: 2) {
+                        likeAnimation = true
+                        performAnimation()
+                        likedPost.toggle()
+                        if likedPost {
+                            vm.post.likes += 1
+                        } else {
+                            vm.post.likes -= 1
+                        }
+                    }
+                Image(systemName: likeAnimation ? "heart.fill" : "")
+                    .scaleEffect(likeAnimation ? 1 : 0)
+                    .opacity(likeAnimation ? 1 : 0)
+                    .animation(.spring())
+                    .foregroundColor(.white)
+                    .font(.custom("heartSize", fixedSize: 75))
+            }
             
             HStack {
                 Button {
                     if likedPost {
+                        self.animate = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + self.duration, execute: {
+                            self.animate = false
+                            likedPost.toggle()
+                        })
                         vm.decrementLikeCount()
-                        likedPost.toggle()
                     } else {
                         vm.incrementLikeCount()
-                        likedPost.toggle()
+                        self.animate = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + self.duration, execute: {
+                            self.animate = false
+                            likedPost.toggle()
+                        })
                     }
                 } label: {
                     if likedPost {
@@ -61,7 +99,8 @@ struct PostView: View {
                             .fontWeight(.medium)
                             .foregroundColor(.primary)
                     }
-                }
+                }   .scaleEffect(animate ? animationScale : 1)
+                    .animation(.easeIn(duration: duration))
                 
                 Button {
                     commentSheet.toggle()
